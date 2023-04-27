@@ -1,7 +1,7 @@
 @model Dir_Struct.Models.Folder_Entity
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Directory";
 }
 
 <h4>
@@ -14,7 +14,7 @@
 <table class="table">
     <thead>
         <tr>
-            Inner Folders
+            Inner Folders:
         </tr>
     </thead>
     <tbody>
@@ -23,7 +23,9 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Name)
+                        <a asp-action="Folder" asp-route-id="@item.ID">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </a>
                     </td>
                 </tr>
             }
