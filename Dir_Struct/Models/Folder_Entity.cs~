@@ -1,0 +1,13 @@
+﻿using System;
+
+namespace Dir_Struct.Models
+{
+    public class Folder_Entity
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+
+        public ICollection<Folder_Entity>? InnerFolders { get; set; }
+    }
+}
+
