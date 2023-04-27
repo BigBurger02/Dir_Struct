@@ -28,6 +28,10 @@
                             @Html.DisplayFor(modelItem => item.Name)
                         </a>
                     </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                    </td>
                 </tr>
             }
     </tbody>

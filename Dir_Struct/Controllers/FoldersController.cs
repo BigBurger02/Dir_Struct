@@ -49,24 +49,6 @@ namespace Dir_Struct.Controllers
             return View(folder);
         }
 
-        // GET: Folders/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null || _context.Folder_Entities == null)
-            {
-                return NotFound();
-            }
-
-            var folder_Entity = await _context.Folder_Entities
-                .FirstOrDefaultAsync(m => m.ID == id);
-            if (folder_Entity == null)
-            {
-                return NotFound();
-            }
-
-            return View(folder_Entity);
-        }
-
         // GET: Folders/Create
         public IActionResult Create()
         {
