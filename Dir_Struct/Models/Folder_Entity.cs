@@ -8,7 +8,7 @@ namespace Dir_Struct.Models
         public string Name { get; set; }
         public int OwnerID { get; set; }
 
-        public ICollection<Folder_Entity>? NestedFolders { get; set; }
+        public List<Folder_Entity>? NestedFolders { get; set; }
     }
 }
 

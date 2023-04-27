@@ -29,22 +29,17 @@ namespace Dir_Struct.Controllers
 
         public IActionResult Folder(int? id)
         {
-            if (id == null || id <= 0)
-                id = 1;
+            if (id == null)
+                id = 0;
 
             var folder = _context.Folder_Entities
-                .AsNoTracking()
-                .FirstOrDefault(f => f.ID == id);
-
-            var childs = _context.Folder_Entities
-                .AsNoTracking()
-                .Where(c => c.OwnerID == id);
-
-            folder.NestedFolders = new List<Folder_Entity>();
-
-            if (childs != null)
-                foreach (var item in childs)
-                    folder.NestedFolders.Add(item);
+                .Where(f => f.ID == id)
+                .Select(fdr => new Folder_Entity
+                {
+                    ID = fdr.ID,
+                    Name = fdr.Name,
+                    OwnerID = fdr.OwnerID
+                });
 
             return View(folder);
         }

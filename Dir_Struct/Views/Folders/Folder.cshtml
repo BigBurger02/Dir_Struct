@@ -1,0 +1,31 @@
+@model Dir_Struct.Models.Folder_Entity
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h4>
+    @Html.DisplayFor(model => model.Name)
+</h4>
+
+@*<p>
+        <a asp-action="Create">Create New</a>
+    </p>*@
+<table class="table">
+    <thead>
+        <tr>
+            Inner Folders
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.NestedFolders != null)
+            @foreach (var item in Model.NestedFolders)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                </tr>
+            }
+    </tbody>
+</table>
