@@ -161,7 +161,7 @@ namespace Dir_Struct.Controllers
         {
             if (_context.Folder_Entities == null)
             {
-                return Problem("Entity set 'FolderContext.Folder_Entities'  is null.");
+                return Problem("Directory is empty.");
             }
             var folder_Entity = await _context.Folder_Entities.FindAsync(id);
             if (folder_Entity != null)
@@ -170,7 +170,7 @@ namespace Dir_Struct.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Folder));
         }
 
         private bool Folder_EntityExists(int id)
