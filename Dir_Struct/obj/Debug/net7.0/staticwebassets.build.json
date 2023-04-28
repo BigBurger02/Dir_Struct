@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "L4M26iqLkHEvCG1affGOHUaa5G0KND2b7kiAjReTdy4=",
+  "Hash": "bcidJ7VKjUxBz/t/5CbZPZDq+R+cRBpLyn5Bj61fZpM=",
   "Source": "Dir_Struct",
   "BasePath": "_content/Dir_Struct",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/site.css"
+    },
+    {
+      "Identity": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/css/site.css~",
+      "SourceId": "Dir_Struct",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/",
+      "BasePath": "_content/Dir_Struct",
+      "RelativePath": "css/site.css~",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/site.css~"
     },
     {
       "Identity": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/favicon.ico",

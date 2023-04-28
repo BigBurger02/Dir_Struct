@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets/css/site.css"
     },
     {
+      "Id": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/css/site.css~",
+      "PackagePath": "staticwebassets/css/site.css~"
+    },
+    {
       "Id": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
     },

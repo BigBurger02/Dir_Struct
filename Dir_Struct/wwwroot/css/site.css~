@@ -22,5 +22,7 @@ body {
 }
 
 a {
+    color: #8d8176;
     text-decoration: none !important;
+    border: none !important;
 }
