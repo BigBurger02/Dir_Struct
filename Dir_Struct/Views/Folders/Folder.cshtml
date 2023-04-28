@@ -9,9 +9,10 @@
     @Html.DisplayFor(model => model.Name)
 </h4>
 
-@*<p>
-        <a asp-action="Create">Create New</a>
-    </p>*@
+<p>
+    <a asp-action="Create" asp-route-id="@Model.ID">Create Folder</a>
+</p>
+
 <table class="table">
     <thead>
         <tr>

@@ -50,9 +50,23 @@ namespace Dir_Struct.Controllers
         }
 
         // GET: Folders/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create(int? id)
         {
-            return View();
+            if (id == null || _context.Folder_Entities == null)
+            {
+                return NotFound();
+            }
+
+            var folder_Entity = await _context.Folder_Entities.FindAsync(id);
+
+            if (folder_Entity == null)
+            {
+                return NotFound();
+            }
+
+            folder_Entity.OwnerID = folder_Entity.ID;
+
+            return View(folder_Entity);
         }
 
         // POST: Folders/Create
@@ -60,13 +74,13 @@ namespace Dir_Struct.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,OwnerID")] Folder_Entity folder_Entity)
+        public async Task<IActionResult> Create([Bind("Name,OwnerID")] Folder_Entity folder_Entity)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(folder_Entity);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Folder));
             }
             return View(folder_Entity);
         }
@@ -117,7 +131,7 @@ namespace Dir_Struct.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Folder));
             }
             return View(folder_Entity);
         }
