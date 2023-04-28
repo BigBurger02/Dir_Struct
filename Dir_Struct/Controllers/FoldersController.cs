@@ -27,6 +27,7 @@ namespace Dir_Struct.Controllers
                         Problem("Entity set 'FolderContext.Folder_Entities'  is null.");
         }
 
+        // GET: Folders/Folder
         public IActionResult Folder(int? id)
         {
             if (id == null || id <= 0)
@@ -70,8 +71,6 @@ namespace Dir_Struct.Controllers
         }
 
         // POST: Folders/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Name,OwnerID")] Folder_Entity folder_Entity)
@@ -102,8 +101,6 @@ namespace Dir_Struct.Controllers
         }
 
         // POST: Folders/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ID,Name,OwnerID")] Folder_Entity folder_Entity)
