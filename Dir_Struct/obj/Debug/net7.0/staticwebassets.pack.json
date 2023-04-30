@@ -5,6 +5,18 @@
       "PackagePath": "staticwebassets/Dir_Struct.bundle.scp.css"
     },
     {
+      "Id": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/.DS_Store",
+      "PackagePath": "staticwebassets/.DS_Store"
+    },
+    {
+      "Id": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/UserFiles/.DS_Store",
+      "PackagePath": "staticwebassets/UserFiles/.DS_Store"
+    },
+    {
+      "Id": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/UserFiles/Imports/.DS_Store",
+      "PackagePath": "staticwebassets/UserFiles/Imports/.DS_Store"
+    },
+    {
       "Id": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },

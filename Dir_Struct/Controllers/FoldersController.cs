@@ -7,16 +7,19 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Dir_Struct.Data;
 using Dir_Struct.Models;
+using System.Text;
 
 namespace Dir_Struct.Controllers
 {
     public class FoldersController : Controller
     {
         private readonly FolderContext _context;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public FoldersController(FolderContext context)
+        public FoldersController(FolderContext context, IWebHostEnvironment webHostEnvironment)
         {
             _context = context;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         // GET: Folders
@@ -173,6 +176,104 @@ namespace Dir_Struct.Controllers
         private bool Folder_EntityExists(int id)
         {
             return (_context.Folder_Entities?.Any(e => e.ID == id)).GetValueOrDefault();
+        }
+
+        public IActionResult Import_Export()
+        {
+            FileModel fileModel = new FileModel();
+
+            return View(fileModel);
+        }
+
+        /// <summary>
+        /// File represent FileModel.cs data in next format:
+        /// [ID]_&_[Name]_&_[OwnerID]\n
+        /// ...
+        /// [ID]_&_[Name]_&_[OwnerID]\n
+        /// </summary>
+        [HttpPost]
+        public async Task<IActionResult> Import_Export(FileModel fileModel)
+        {
+            if (fileModel == null || fileModel.file == null)
+                return View();
+
+            // Work with file
+            string filePath = _webHostEnvironment.WebRootPath + "/UserFiles/Imports/" + Guid.NewGuid().ToString() + "_" + fileModel.file.FileName;
+
+            using (var stream = System.IO.File.Create(filePath))
+            {
+                await fileModel.file.CopyToAsync(stream);
+            }
+
+            string UnsplittedLine = "";
+            using (var stream = new StreamReader(filePath))
+            {
+                UnsplittedLine = stream.ReadToEnd();
+            }
+
+            // Splitting data into string array then splitting that strings to Folder_Entity items
+            string[] UnsplittedData = UnsplittedLine.Split("\n");
+            var Data = new Folder_Entity[UnsplittedData.Length];
+            int i = 0;
+            foreach (var item in UnsplittedData)
+            {
+                if (item != "" && item.Contains("_&_"))
+                {
+                    var SplittedData = new string[3];
+                    SplittedData = item.Split("_&_");
+
+                    // If data incorrect item will be skipped
+                    if (SplittedData.Length != 3 ||
+                        SplittedData[0] == null || SplittedData[1] == null || SplittedData[2] == null ||
+                        SplittedData[0] == "" || SplittedData[1] == "" || SplittedData[2] == "" ||
+                        !int.TryParse(SplittedData[0], out int result0) || !int.TryParse(SplittedData[2], out int result2))
+                        continue;
+
+                    Data[i] = new Folder_Entity { ID = result0, Name = SplittedData[1], OwnerID = result2 };
+
+                    i++;
+                }
+            }
+
+            if (Data.Length == 0)
+                return View();
+
+            // Remove all rows in table and creating new rows from Data array
+            _context.Folder_Entities.RemoveRange(_context.Folder_Entities);
+            foreach (Folder_Entity item in Data)
+                if (item != null)
+                    _context.Folder_Entities.Add(item);
+            _context.SaveChanges();
+
+            return RedirectToAction(nameof(Folder));
+        }
+
+        /// <summary>
+        /// File represent FileModel.cs data in next format:
+        /// [ID]_&_[Name]_&_[OwnerID]\n
+        /// ...
+        /// [ID]_&_[Name]_&_[OwnerID]\n
+        /// </summary>
+        public IActionResult DownloadFile()
+        {
+            // Create result string
+            string result = "";
+            var data = _context.Folder_Entities
+                .ToList();
+            foreach (var item in data)
+                result += item.ID + "_&_" + item.Name + "_&_" + item.OwnerID + "\n";
+
+            // Create and fill file
+            string filePath = _webHostEnvironment.WebRootPath + "/UserFiles/Imports/" + Guid.NewGuid().ToString() + ".txt";
+
+            using (StreamWriter streamWriter = System.IO.File.CreateText(filePath))
+            {
+                streamWriter.WriteLine(result);
+            }
+
+            var stream = new FileStream(filePath, FileMode.Open);
+
+            return File(stream, "text/plain", filePath);
         }
     }
 }

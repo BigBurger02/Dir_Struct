@@ -32,5 +32,11 @@
     <Folder Include="Models\" />
     <Folder Include="Models\" />
     <Folder Include="Data\" />
+    <Folder Include="wwwroot\UserFiles\" />
+    <Folder Include="wwwroot\UserFiles\Imports\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\UserFiles\" />
+    <Content Remove="wwwroot\UserFiles\Imports\" />
   </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bcidJ7VKjUxBz/t/5CbZPZDq+R+cRBpLyn5Bj61fZpM=",
+  "Hash": "I0N/isx2s3O7ZtkfTk4FiQauW3DvjK8lNH5uLNNnpwk=",
   "Source": "Dir_Struct",
   "BasePath": "_content/Dir_Struct",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/obj/Debug/net7.0/scopedcss/projectbundle/Dir_Struct.bundle.scp.css"
+    },
+    {
+      "Identity": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/.DS_Store",
+      "SourceId": "Dir_Struct",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/",
+      "BasePath": "_content/Dir_Struct",
+      "RelativePath": ".DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/.DS_Store"
     },
     {
       "Identity": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/css/site.css",
@@ -1086,6 +1103,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Identity": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/UserFiles/.DS_Store",
+      "SourceId": "Dir_Struct",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/",
+      "BasePath": "_content/Dir_Struct",
+      "RelativePath": "UserFiles/.DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/UserFiles/.DS_Store"
+    },
+    {
+      "Identity": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/UserFiles/Imports/.DS_Store",
+      "SourceId": "Dir_Struct",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/",
+      "BasePath": "_content/Dir_Struct",
+      "RelativePath": "UserFiles/Imports/.DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/UserFiles/Imports/.DS_Store"
     }
   ]
 }

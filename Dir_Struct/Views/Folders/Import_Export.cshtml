@@ -1,0 +1,36 @@
+@model Dir_Struct.Models.FileModel
+
+@{
+    ViewData["Title"] = "Import/Export";
+}
+
+<div>
+    <p>
+        You can download directory struct from server in .txt file. <br />
+        You also can upload that file to srever. <br />
+        It can be used like backup file. <br />
+        <span class="warning-sign">[WARNING] If you upload directory from file, it will replace current directory on server!</span>
+    </p>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h1>Import</h1>
+
+        <form enctype="multipart/form-data" method="post">
+            <dl>
+                <dd>
+                    <input asp-for="file" type="file">
+                    <span asp-validation-for="file"></span>
+                </dd>
+            </dl>
+            <input asp-page-handler="Upload" class="btn btn-primary" type="submit" value="Upload" />
+        </form>
+    </div>
+
+    <div class="col-md-6">
+        <h1>Export</h1>
+
+        <a asp-action="DownloadFile" class="btn btn-primary">Download</a>
+    </div>
+</div>
