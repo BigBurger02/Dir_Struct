@@ -1,0 +1,8 @@
+﻿namespace Dir_Struct.Models
+{
+    public class FileModel
+    {
+
+    }
+}
+
