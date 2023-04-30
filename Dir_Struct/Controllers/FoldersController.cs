@@ -185,6 +185,12 @@ namespace Dir_Struct.Controllers
             return View(fileModel);
         }
 
+        /// <summary>
+        /// File represent FileModel.cs data in next format:
+        /// [ID]_&_[Name]_&_[OwnerID]\n
+        /// ...
+        /// [ID]_&_[Name]_&_[OwnerID]\n
+        /// </summary>
         [HttpPost]
         public async Task<IActionResult> Import_Export(FileModel fileModel)
         {
@@ -242,6 +248,12 @@ namespace Dir_Struct.Controllers
             return RedirectToAction(nameof(Folder));
         }
 
+        /// <summary>
+        /// File represent FileModel.cs data in next format:
+        /// [ID]_&_[Name]_&_[OwnerID]\n
+        /// ...
+        /// [ID]_&_[Name]_&_[OwnerID]\n
+        /// </summary>
         public IActionResult DownloadFile()
         {
             // Create result string
@@ -257,7 +269,6 @@ namespace Dir_Struct.Controllers
             using (StreamWriter streamWriter = System.IO.File.CreateText(filePath))
             {
                 streamWriter.WriteLine(result);
-                streamWriter.Close();
             }
 
             var stream = new FileStream(filePath, FileMode.Open);

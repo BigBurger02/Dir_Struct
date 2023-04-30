@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DNbrEanHHVX8hJ3Dr5EaJzwnK6VhprDCQHkvBg1zaDQ=",
+  "Hash": "I0N/isx2s3O7ZtkfTk4FiQauW3DvjK8lNH5uLNNnpwk=",
   "Source": "Dir_Struct",
   "BasePath": "_content/Dir_Struct",
   "Mode": "Default",
@@ -1137,57 +1137,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/UserFiles/Imports/.DS_Store"
-    },
-    {
-      "Identity": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/UserFiles/Imports/3304cbf7-0673-473f-9445-e2308bf1a1dc.txt",
-      "SourceId": "Dir_Struct",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/",
-      "BasePath": "_content/Dir_Struct",
-      "RelativePath": "UserFiles/Imports/3304cbf7-0673-473f-9445-e2308bf1a1dc.txt",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/UserFiles/Imports/3304cbf7-0673-473f-9445-e2308bf1a1dc.txt"
-    },
-    {
-      "Identity": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/UserFiles/Imports/9058af72-3fe4-406e-8ac1-4f577e047061.txt",
-      "SourceId": "Dir_Struct",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/",
-      "BasePath": "_content/Dir_Struct",
-      "RelativePath": "UserFiles/Imports/9058af72-3fe4-406e-8ac1-4f577e047061.txt",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/UserFiles/Imports/9058af72-3fe4-406e-8ac1-4f577e047061.txt"
-    },
-    {
-      "Identity": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/UserFiles/Imports/d3d1d74f-816d-426f-b8be-893a19a3fe27.txt",
-      "SourceId": "Dir_Struct",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/",
-      "BasePath": "_content/Dir_Struct",
-      "RelativePath": "UserFiles/Imports/d3d1d74f-816d-426f-b8be-893a19a3fe27.txt",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/UserFiles/Imports/d3d1d74f-816d-426f-b8be-893a19a3fe27.txt"
     }
   ]
 }
