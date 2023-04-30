@@ -241,5 +241,28 @@ namespace Dir_Struct.Controllers
 
             return RedirectToAction(nameof(Folder));
         }
+
+        public IActionResult DownloadFile()
+        {
+            // Create result string
+            string result = "";
+            var data = _context.Folder_Entities
+                .ToList();
+            foreach (var item in data)
+                result += item.ID + "_&_" + item.Name + "_&_" + item.OwnerID + "\n";
+
+            // Create and fill file
+            string filePath = _webHostEnvironment.WebRootPath + "/UserFiles/Imports/" + Guid.NewGuid().ToString() + ".txt";
+
+            using (StreamWriter streamWriter = System.IO.File.CreateText(filePath))
+            {
+                streamWriter.WriteLine(result);
+                streamWriter.Close();
+            }
+
+            var stream = new FileStream(filePath, FileMode.Open);
+
+            return File(stream, "text/plain", filePath);
+        }
     }
 }
