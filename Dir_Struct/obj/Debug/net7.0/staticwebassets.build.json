@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "I0N/isx2s3O7ZtkfTk4FiQauW3DvjK8lNH5uLNNnpwk=",
+  "Hash": "2Sv3oEay6g+hkIX+8XXA2drWo8P344jNf/LihhF27kc=",
   "Source": "Dir_Struct",
   "BasePath": "_content/Dir_Struct",
   "Mode": "Default",
@@ -1137,6 +1137,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/UserFiles/Imports/.DS_Store"
+    },
+    {
+      "Identity": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/UserFiles/Imports/751d6c59-18e7-4130-992d-f551b7e8a417.txt",
+      "SourceId": "Dir_Struct",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/macbook/App/repos/Dir_Struct/Dir_Struct/wwwroot/",
+      "BasePath": "_content/Dir_Struct",
+      "RelativePath": "UserFiles/Imports/751d6c59-18e7-4130-992d-f551b7e8a417.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/UserFiles/Imports/751d6c59-18e7-4130-992d-f551b7e8a417.txt"
     }
   ]
 }

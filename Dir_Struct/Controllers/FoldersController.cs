@@ -195,8 +195,7 @@ namespace Dir_Struct.Controllers
         public async Task<IActionResult> Import_Export(FileModel fileModel)
         {
             if (fileModel == null || fileModel.file == null)
-                return View();
-
+                return RedirectToAction("Error", new { message = "Sorry, we can't read your file :(" });
             // Work with file
             string filePath = _webHostEnvironment.WebRootPath + "/UserFiles/Imports/" + Guid.NewGuid().ToString() + "_" + fileModel.file.FileName;
 
@@ -236,7 +235,7 @@ namespace Dir_Struct.Controllers
             }
 
             if (Data.Length == 0)
-                return View();
+                return RedirectToAction("Error", new { message = "Sorry, we can't read your file :(" });
 
             // Remove all rows in table and creating new rows from Data array
             _context.Folder_Entities.RemoveRange(_context.Folder_Entities);
@@ -274,6 +273,14 @@ namespace Dir_Struct.Controllers
             var stream = new FileStream(filePath, FileMode.Open);
 
             return File(stream, "text/plain", filePath);
+        }
+
+        public IActionResult Error(string message)
+        {
+            Models.Error error = new Error();
+            error.message = message;
+
+            return View(error);
         }
     }
 }
