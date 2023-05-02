@@ -80,6 +80,9 @@ namespace Dir_Struct.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (folder_Entity.Name.Contains("_&_"))
+                    return RedirectToAction("Error", new { message = "Sorry, you can't use _&_ in folder name" });
+
                 _context.Add(folder_Entity);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Folder));
