@@ -14,5 +14,5 @@ User can:
       - upload to the server early downloaded directory from the .txt file
   - browse a list of all folders you have in the directory (without nesting)
 
-Sorry( I forgot to add .gitignore
+Sorry( I forgot to add .gitignore.
 It will be better if you don't modify the .txt file yourself.
